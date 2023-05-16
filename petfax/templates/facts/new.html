@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>PetFax | Submit New Facts</title>
+</head>
+<body>
+    <H1>Submit Fax</H1>
+    <div class="message">
+        <p>
+            Leave a kind message to our new pet info page! Let's help your new furry friends feel loved and snuggled.
+        </p>
+    </div>
+    <div class="facts-container">
+        <div class="forms-container">
+            <form class="form" action="/facts" method="POST">
+            <div>
+                <label for="submitter">Name: </label>
+                <input type="text" id="submitter" name="submitter" required>
+            </div>
+            <br/>
+            <div> 
+                <label for="fact"> Fun Fact: </label>
+                <textarea id="fact" name="fact" required></textarea>
+            </div>
+            <br/>
+            <div>
+                <input class="submit" type="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <div>
+            <a class="link" href="/pets"> Back </a>
+        </div>
+        <div>
+            <a class="link" href="/facts"> Facts  </a>
+        </div>
+    </div>
+    <footer>
+        <p>"Pets are the sweetest little brats you could ever encounter. Make sure to spoil yours with all the treats!"</p>
+    </footer> 
+</body>
+</html>

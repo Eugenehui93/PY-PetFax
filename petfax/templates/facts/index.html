@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>PetFax | User Fax Page</title>
+</head>
+<body>
+    <H1>User Fax</H1>
+    <div class="message">
+        <p>
+            "Meet friends and their beloved pets, bound by love and joy."
+        </p>
+    </div> 
+    <div class="user-container">
+        {% for fact in facts %}
+            <div class="user-card">
+                <div>
+                    "{{ fact.fact }}""
+                    <h4>Submitted by <b>{{ fact.submitter }}</b></h4>
+                </div>
+            </div>    
+        {% endfor %}
+    </div>
+    <div class="buttons">
+        <div>
+            <a class="link" href="/pets"> Back </a>
+        </div>
+        <div>
+            <a class="link" href="/facts"> Facts </a>
+        </div>
+    </div>
+    <footer>
+        <p>"Pets are the sweetest little brats you could ever encounter. Make sure to spoil yours with all the treats!</p>
+    </footer> 
+</body>
+</html>
