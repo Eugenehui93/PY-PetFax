@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>PetFax | Pets Adoption Page</title>
+</head>
+<body>
+    <div>
+        <H1>Welcome to PetFax</H1>
+        <div class="message">
+            <p>
+                "Welcome to our Friendly Pet View Page! Look at adorable pictures of pets and read their stories. Who knows, you may find your furry best friend today!"
+            </p>
+        </div>
+        <div class="gallery-container">
+            
+                {% for pet in pets %}   
+                <div class="card">     
+                <div> 
+                    <H2>{{ pet.pet_name }}</H2>  
+                </div>
+                <div>
+                    <img class="gallery_pic" src="{{ pet.pet_photo }}" alt="pet photo"/>
+                </div>
+                <div>
+                    <a class="link" href="/pets/{{ pet.pet_id }}">Learn more -></a>
+                </div>
+            </div>
+                {% endfor %}
+        </div>
+        <div class="funfacts">
+            We'd love to learn more fun facts! <a class="link" href="/facts/new">Submit some here.</a>
+        </div>
+    </div>  
+    <footer>
+        <p>"Pets are the sweetest little brats you could ever encounter. Make sure to spoil yours with all the treats!"</p>
+    </footer>    
+</body>
+</html>
